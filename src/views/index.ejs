@@ -1,0 +1,32 @@
+<%- include('./includes/head.ejs'); -%>
+<%- include('./includes/nav.ejs'); -%>
+<section class="container-md m-auto pt-5">
+  <div class="row justify-content-center pt-5">
+    <div class="col-11 col-sm-11 col-md-11 col-lg-9 my-5">
+      <h1 class="text-center fw-semibold">Agenda de Contatos</h1>
+      <p class="lead text-center text-break">Abaixo sua lista de contatos </p>
+      <%- include('./includes/messages.ejs'); -%>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Sobrenome</th>
+              <th scope="col">Telefone</th>
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Karol</td>
+              <td>Siqueira</td>
+              <td>994571858</td>
+              <td>karol.siqueira@gmail.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include('./includes/footer.ejs'); -%>

@@ -1,0 +1,12 @@
+<%- include('./includes/head.ejs'); -%>
+<%- include('./includes/nav.ejs'); -%>
+<section class="col-11 col-md-6 container-md m-auto pt-5">
+  <div class="row justify-content-center pt-5 gap-1">
+    <h1 class="display-5 fw-semibold text-center pb-4">📓 Agenda Aí</h1>
+      <%- include('./includes/messages.ejs'); -%>
+      <p class="text-center">Olá, <%= user.email %></p>
+      <p class="text-center">Se quiser criar outra conta, você precisar sair.</p>
+      <a class="btn btn-outline-primary col-5 col-md-4" href="/">Acessar contatos</a>
+  </div>
+</section>
+<%- include('./includes/footer.ejs'); -%>
