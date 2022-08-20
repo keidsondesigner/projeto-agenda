@@ -1,0 +1,37 @@
+<%- include('./includes/head.ejs'); -%>
+<%- include('./includes/nav.ejs'); -%>
+<section class="container-md m-auto pt-5">
+  <div class="row justify-content-center pt-5">
+    <div class="col-11 col-sm-11 col-md-11 col-lg-9 col-xl-6 my-5">
+      <h1 class="text-center fw-semibold">Contato</h1>
+      <p class="lead text-center text-break">Crie ou Edite seu contato</p>
+      <%- include('./includes/messages.ejs'); -%>
+
+      <% if(contato._id) { %>
+      <form class="pt-5" action="/contato/edit/<%= contato._id %>" method="POST">
+      <% } else { %>
+      <form class="pt-5" action="/contato/register" method="POST">
+      <% } %>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div class="form-floating mb-3">
+          <input value="<%= contato.nome %>" type="text" class="form-control" id="floatingInput1" placeholder="seu nome" name="nome">
+          <label for="floatingInput1">Nome</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input value="<%= contato.sobrenome %>" type="text" class="form-control" id="floatingInput2" placeholder="seu sobrenome" name="sobrenome">
+          <label for="floatingInput2">Sobrenome</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input value="<%= contato.email %>" type="email" class="form-control" id="floatingInput3" placeholder="seu email" name="email">
+          <label for="floatingInput3">Email</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input value="<%= contato.telefone %>" type="tel" class="form-control" id="floatingInput4" placeholder="seu email" name="telefone">
+          <label for="floatingInput4">Telefone</label>
+        </div>
+        <button type="submit" class="btn btn-outline-primary col-12">Salvar</button>
+      </form>
+    </div>
+  </div>
+</section>
+<%- include('./includes/footer.ejs'); -%>

@@ -9,7 +9,11 @@ const mongoose = require('mongoose');
 // quando a promessa for resolvida ou rejeitada emitir o app.emit('pronto')
 // ou emitir o error
 mongoose.connect(
-  process.env.CONNECTIONSTRING, {useNewURLParser: true, useUnifiedTopology: true})
+  process.env.CONNECTIONSTRING, {
+    useNewURLParser: true,
+    useUnifiedTopology: true
+    }
+  )
 	.then(() => {
 		app.emit('pronto');
 	}).catch(error => console.log(error)
@@ -44,7 +48,8 @@ app.use(
           "'self'",
           "'unsafe-inline'",
           'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css',
-          'https://fonts.googleapis.com'
+          'https://fonts.googleapis.com',
+          'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css'
         ],
         imgSrc: [
           "'self'",
@@ -54,7 +59,9 @@ app.use(
         fontSrc: [
           "'self'",
           "'unsafe-inline'",
-          'https://fonts.gstatic.com'
+          'https://fonts.gstatic.com',
+          'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/fonts/bootstrap-icons.woff?8d200481aa7f02a2d63a331fc782cfaf',
+          'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/fonts/bootstrap-icons.woff2?8d200481aa7f02a2d63a331fc782cfaf'
         ],
         objectSrc: ["'self'"],
         mediaSrc: ["'self'"],

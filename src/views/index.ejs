@@ -4,9 +4,9 @@
   <div class="row justify-content-center pt-5">
     <div class="col-11 col-sm-11 col-md-11 col-lg-9 my-5">
       <h1 class="text-center fw-semibold">Agenda de Contatos</h1>
-      <p class="lead text-center text-break">Abaixo sua lista de contatos </p>
+      <p class="lead text-center text-break">Seus contatos acessíveis na nuvem!</p>
       <%- include('./includes/messages.ejs'); -%>
-      <div class="table-responsive">
+      <div class="table-responsive pt-5">
         <table class="table table-hover">
           <thead>
             <tr>
@@ -14,15 +14,26 @@
               <th scope="col">Sobrenome</th>
               <th scope="col">Telefone</th>
               <th scope="col">Email</th>
+              <th scope="">Ações</th>
             </tr>
           </thead>
           <tbody>
+            <% contatos.forEach(contato => { %>
             <tr>
-              <td>Karol</td>
-              <td>Siqueira</td>
-              <td>994571858</td>
-              <td>karol.siqueira@gmail.com</td>
+              <td class="pe-3 text-nowrap"><%= contato.nome %></td>
+              <td class="pe-3 text-nowrap"><%= contato.sobrenome %></td>
+              <td class="pe-3 text-nowrap"><%= contato.telefone %></td>
+              <td class="pe-3 text-nowrap"><%= contato.email %></td>
+              <td class="pe-3 text-nowrap">
+                <a class="btn btn-outline-primary btn-sm me-3" href="/contato/index/<%= contato._id %>" title="Editar">
+                  <i class="bi bi-pencil"></i>
+                </a>
+                <a class="btn btn-outline-danger btn-sm" href="/contato/delete/<%= contato._id %>" title="Excluir">
+                  <i class="bi bi-trash"></i>
+                </a>
+              </td>
             </tr>
+            <% }); %>
           </tbody>
         </table>
       </div>
